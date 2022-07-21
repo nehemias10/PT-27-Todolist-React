@@ -10,7 +10,7 @@ const borrarTarea = () => {
     return (
         <div>
 <div className="tarea">
-    <span><li>{props.tarea}</li></span>   <span onClick={borrarTarea}>eliminar</span> 
+    <span className="propstareas"><li>{props.tarea}</li></span>   <span onClick={borrarTarea}><img src="https://cdn-icons-png.flaticon.com/512/1345/1345874.png" alt="" /></span> 
 </div>
 
         </div>

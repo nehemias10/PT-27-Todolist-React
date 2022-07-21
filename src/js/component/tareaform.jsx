@@ -20,11 +20,12 @@ const TareaForm = (Props) => {
   };
 
   return (
+    
     <div className="form" onSubmit={submit}>
       <form>
-        <span>Añadir Tarea</span>
+        <span className="añadir">Agrega tarea</span>
         <input value={inputText} onChange={manejarFormulario} />
-        <button className="boton">Añadir</button>
+        <button className="button">Añadir</button>
       </form>
       {
       !validacion && 

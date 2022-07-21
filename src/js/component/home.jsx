@@ -17,6 +17,8 @@ const borrar = (id) => {
   setListaTareas(listaFiltrada);
 }
   return (
+   <div>
+    <h2 className="todolist">Todo List</h2>
     <div className="todo">
       <TareaForm nuevaTarea={nuevaTarea} />
 <div className="tareas">
@@ -33,6 +35,7 @@ const borrar = (id) => {
 
 </div>
       
+    </div>
     </div>
   );
 };

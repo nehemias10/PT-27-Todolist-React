@@ -1,26 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+
+import TareaForm from "./tareaform.jsx";
+import Tarea from "./Tarea.jsx";
 
 //create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+  const [listaTareas, setListaTareas] = useState([]);
+
+  const nuevaTarea = (tarea) => {
+    setListaTareas([tarea, ...listaTareas]);
+  };
+
+const borrar = (id) => {
+  const listaFiltrada = listaTareas.filter((e, index) => index !== id);
+  setListaTareas(listaFiltrada);
+}
+  return (
+    <div className="todo">
+      <TareaForm nuevaTarea={nuevaTarea} />
+<div className="tareas">
+
+{
+        listaTareas.map((e, index) => <Tarea
+          
+                        tarea={e}
+                        borrar={borrar}
+                        id={index}
+                        
+                        />)
+      }
+
+</div>
+      
+    </div>
+  );
 };
 
 export default Home;

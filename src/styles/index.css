@@ -80,7 +80,9 @@ img{
 }
 
 .propstareas{
-  text-decoration: underline;
+ 
+  font: oblique bold 100% cursive;
+  
 }
 
 .añadir{
